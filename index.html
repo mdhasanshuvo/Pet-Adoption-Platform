@@ -10,9 +10,88 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- font-awesome linked -->
+    <script src="https://kit.fontawesome.com/f3fa059d84.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
+    <header class="container mx-auto">
+        <!-- Nav bar start -->
+        <div class="navbar bg-base-100 my-2">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <li><a>Home</a></li>
+                        <li><a>Shop</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="flex items-center">
+                    <img src="images/logo.webp" alt="">
+                    <a class="btn btn-ghost text-3xl font-bold text[#131313]">Peddy</a>
+                </div>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 text-[#131313] text-lg">
+                    <li><a>Home</a></li>
+                    <li><a>Shop</a></li>
+                    <li><a>Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <img class="w-8" src="images/Frame.svg" alt="">
+            </div>
+        </div>
+        <!-- Nav bar end -->
+
+        <!-- Banner section Start -->
+        <div class="w-8/12 mx-auto mb-32 mt-10 space-y-10">
+
+            <!-- content -->
+            <div class="text-center space-y-8">
+                <h4 class="text-[#13131399] text-xl font-bold">Bringing Families Together ❤️‍🔥 </h4>
+                <h1 class="text-[#131313] font-extrabold text-6xl">Your Path to Adoption Starts Here</h1>
+                <p class="text-[#131313] text-base">It is a long established fact that a reader will be distracted by
+                    the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it
+                    has a.</p>
+                <div class="btn bg-[#0E7A81] text-white text-xl font-normal">View More</div>
+            </div>
+
+            <!-- image -->
+            <div class="flex justify-center">
+                <img src="images/pet.webp" alt="">
+            </div>
+        </div>
+        <!-- Banner section End -->
+
+
+    </header>
+
+    <main class="container mx-auto">
+        <!-- Adopt section start -->
+        <section class="my-12">
+            <!-- texts -->
+            <div class="w-6/12 mx-auto space-y-6 text-center">
+                <h2 class="text-[#131313] font-bold text-4xl">Adopt Your Best Friend</h2>
+                <p class="text-[#13131399] text-base font-normal">Pet adoption program that helps match shelter animals
+                    with loving
+                    families, promoting responsible and providing support for adopting pets like dogs,
+                    cats, and more.</p>
+            </div>
+        </section>
+        <!-- Adopt section end -->
+    </main>
+
+
 
 
 
