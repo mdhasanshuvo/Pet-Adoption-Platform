@@ -12,6 +12,16 @@
 
     <!-- font-awesome linked -->
     <script src="https://kit.fontawesome.com/f3fa059d84.js" crossorigin="anonymous"></script>
+
+    <!-- internal css -->
+    <style>
+        .active {
+            background-color: rgba(14, 122, 129, 0.10);
+            border-radius: 120px;
+            border: 1.5px solid #0E7A81;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -100,11 +110,12 @@
             </div>
 
             <!-- pet and liked pet section -->
-            <div id="pets-links" class="grid grid-cols-2 lg:grid-cols-[4fr,1fr] gap-6">
-                <div id="pets" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div id="pets-links" class="flex flex-col-reverse lg:grid lg:grid-cols-[3fr,1fr] gap-6">
+                <div id="pets" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
                 </div>
-                <div id="likes" class="border border-inherit">
+                <div id="likes"
+                    class="border border-inherit grid grid-cols-2 gap-3 lg:gap-2 p-3 lg:p-2 rounded-lg auto-rows-min">
 
                 </div>
             </div>
@@ -113,9 +124,47 @@
         <!-- Adopt section end -->
     </main>
 
+    <!-- modal for descriptions -->
+    <div>
+        <button id="detailsModal" class="btn hidden" onclick="my_modal_5.showModal()">open modal</button>
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <div id="modal_content">
+
+                </div>
+                <div class="modal-action inline my-4">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button
+                            class="w-full border border-[#0e7a8133] bg-[#0e7a811a] rounded-xl text-[#0E7A81] py-2 my-2 font-bold">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+    </div>
+
+    <!-- modal for Adopt -->
+    <div>
+        <!-- Open the modal using ID.showModal() method -->
+        <button id="adoptBtn" class="btn" onclick="adopt.showModal()">open modal</button>
+        <dialog id="adopt" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box text-center">
+                <i class="fa-solid fa-handshake text-5xl" style="color: #FFD43B;"></i>
+                <h3 class="text-5xl font-bold">Congrates</h3>
+                <p class="text-2xl py-4">Adoption Process is Start For Your Pet</p>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+    </div>
+
     <!-- footer section start -->
-    <div class="bg-neutral ">
-        <footer class="footer text-neutral-content p-24 container mx-auto justify-between">
+    <footer class="bg-neutral">
+        <div class="footer text-neutral-content p-10 sm:p-20 lg:p-24 container mx-auto justify-between">
             <nav class="space-y-2 text-base">
                 <div class="flex items-center mb-3">
                     <img src="images/logo.webp" alt="">
@@ -153,8 +202,9 @@
                     </div>
                 </fieldset>
             </nav>
-        </footer>
-    </div>
+        </div>
+
+    </footer>
     <!-- footer section end -->
 
 
