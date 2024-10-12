@@ -45,6 +45,8 @@ function showLikePets(value) {
 // show filtered pets
 function filterPet(value) {
     document.getElementById('spinner').classList.add('hidden');
+    const likes = document.getElementById('likes');
+    likes.classList.remove('hidden');
     const pets = document.getElementById('pets');
     pets.classList.add("grid");
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${value}`)
@@ -70,6 +72,8 @@ function loading(value){
     activeBtn.classList.remove('rounded-xl');
 
     document.getElementById('spinner').classList.remove('hidden');
+    const likes = document.getElementById('likes');
+    likes.classList.add('hidden');
 
     const pets = document.getElementById('pets');
     pets.innerHTML = "";
@@ -78,24 +82,31 @@ function loading(value){
     setTimeout(function(){
         filterPet(value);
 
-    },3000);
+    },2000);
 }
 
 
 // show all pets
 function pets() {
+    document.getElementById('spinner').classList.remove('hidden');
+
+    const likes = document.getElementById('likes');
+    likes.classList.add('hidden');
     fetch('https://openapi.programming-hero.com/api/peddy/pets')
         .then(res => res.json())
         .then(values => {
             setTimeout(function(){
-                showPets(values.pets)
-                document.getElementById('spinner').classList.remove('hidden');
-            },3000);
+                showPets(values.pets);
+            },2000);
         })
         .catch(error => console.log(error))
 }
 function showPets(values) {
+    const likes = document.getElementById('likes');
+    likes.classList.remove('hidden');
+
     const pets = document.getElementById('pets');
+    document.getElementById('spinner').classList.add('hidden');
     pets.innerHTML = "";
     if (values.length == 0) {
         pets.classList.remove("grid");
@@ -148,9 +159,24 @@ pets();
 
 // sort by price
 function sort() {
+    const remBtn = document.getElementsByClassName("category_btn");
+    for (const btn of remBtn) {
+        btn.classList.remove('active');
+    }
+    document.getElementById('spinner').classList.remove('hidden');
+    const pets = document.getElementById('pets');
+    pets.innerHTML = "";
+    const likes = document.getElementById('likes');
+    likes.classList.add('hidden');
+    
     fetch('https://openapi.programming-hero.com/api/peddy/pets')
         .then(res => res.json())
-        .then(values => sortPets(values.pets))
+        .then(values => {
+
+            setTimeout(function(){
+                sortPets(values.pets)
+            },2000);
+        })
         .catch(error => console.log(error))
 }
 function sortPets(pets) {

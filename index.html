@@ -33,7 +33,7 @@
 <body>
 
     <!-- Header Section Start -->
-    <header class="container mx-auto">
+    <header class="container mx-auto px-4">
         <!-- Nav bar start -->
         <div class="navbar bg-base-100 my-2">
             <div class="navbar-start">
@@ -97,7 +97,7 @@
 
 
     <!-- Main Section Start  -->
-    <main class="container mx-auto">
+    <main class="container mx-auto px-4">
 
         <!-- Adopt section start -->
         <section id="adoptFriend" class="my-12">
@@ -117,10 +117,14 @@
             <!-- Best deals -->
             <div class="flex justify-between items-center mb-10">
                 <h3 class="text-[#131313] text-2xl font-bold">Best Deal For you</h3>
-                <button id="sort" onclick="sort()" class="btn btn-primary join-item bg-[#0E7A81] border-none text-white text-xl">Sort by
+                <button id="sort" onclick="sort()"
+                    class="btn btn-primary join-item bg-[#0E7A81] border-none text-white text-xl">Sort by
                     Price</button>
             </div>
 
+            <!-- loading -->
+            <span id="spinner" class="loading loading-bars loading-lg mx-[50%] my-52 hidden"></span>
+            
             <!-- pet and liked pet section -->
             <div id="pets-links" class="flex flex-col-reverse lg:grid lg:grid-cols-[3fr,1fr] gap-6">
                 <div id="pets" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -134,16 +138,15 @@
 
         </section>
         <!-- Adopt section end -->
-         
-        <!-- loading -->
-        <span id="spinner" class="loading loading-bars loading-lg mx-[50%] my-52"></span>
+
+
 
     </main>
     <!-- Main Section End  -->
 
 
     <!-- modal for descriptions -->
-    <div>
+    <div class=" px-4">
         <button id="detailsModal" class="btn hidden" onclick="my_modal_5.showModal()">open modal</button>
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
             <div class="modal-box">
@@ -162,7 +165,7 @@
     </div>
 
     <!-- modal for Adopt -->
-    <div>
+    <div class=" px-4">
         <!-- Open the modal using ID.showModal() method -->
         <dialog id="adopt" class="modal modal-bottom sm:modal-middle">
             <div class="modal-box text-center">
@@ -178,8 +181,8 @@
     </div>
 
     <!-- footer section start -->
-    <footer class="bg-neutral">
-        <div class="footer text-neutral-content p-10 sm:p-20 lg:p-24 container mx-auto justify-between">
+    <footer class="bg-neutral px-4">
+        <div class="footer text-neutral-content px-4 py-10 sm:py-20 lg:py-24 container mx-auto justify-between">
             <nav class="space-y-2 text-base">
                 <div class="flex items-center mb-3">
                     <img src="images/logo.webp" alt="">
