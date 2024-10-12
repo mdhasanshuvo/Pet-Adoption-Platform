@@ -21,11 +21,18 @@
             border: 1.5px solid #0E7A81;
 
         }
+
+        .disabled {
+            background-color: #cbd5e0;
+            border-color: #cbd5e0;
+            color: #6b7280;
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- Header Section Start -->
     <header class="container mx-auto">
         <!-- Nav bar start -->
         <div class="navbar bg-base-100 my-2">
@@ -70,10 +77,11 @@
             <div class="text-center space-y-8">
                 <h4 class="text-[#13131399] text-xl font-bold">Bringing Families Together ❤️‍🔥 </h4>
                 <h1 class="text-[#131313] font-extrabold text-6xl">Your Path to Adoption Starts Here</h1>
-                <p class="text-[#131313] text-base">It is a long established fact that a reader will be distracted by
-                    the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it
-                    has a.</p>
-                <div class="btn bg-[#0E7A81] text-white text-xl font-normal">View More</div>
+                <p class="text-[#131313] text-base">
+                    Adopting a pet brings joy and companionship. Our simple process connects loving families with
+                    animals in need, creating lasting bonds and giving pets a second chance.
+                </p>
+                <div id="scrollButton" class="btn bg-[#0E7A81] text-white text-xl font-normal">View More</div>
             </div>
 
             <!-- image -->
@@ -85,10 +93,14 @@
 
 
     </header>
+    <!-- Header Section End -->
 
+
+    <!-- Main Section Start  -->
     <main class="container mx-auto">
+
         <!-- Adopt section start -->
-        <section class="my-12">
+        <section id="adoptFriend" class="my-12">
             <!-- texts -->
             <div class="w-6/12 mx-auto space-y-6 text-center">
                 <h2 class="text-[#131313] font-bold text-4xl">Adopt Your Best Friend</h2>
@@ -105,7 +117,7 @@
             <!-- Best deals -->
             <div class="flex justify-between items-center mb-10">
                 <h3 class="text-[#131313] text-2xl font-bold">Best Deal For you</h3>
-                <button class="btn btn-primary join-item bg-[#0E7A81] border-none text-white text-xl">Sort by
+                <button id="sort" onclick="sort()" class="btn btn-primary join-item bg-[#0E7A81] border-none text-white text-xl">Sort by
                     Price</button>
             </div>
 
@@ -122,7 +134,13 @@
 
         </section>
         <!-- Adopt section end -->
+         
+        <!-- loading -->
+        <span id="spinner" class="loading loading-bars loading-lg mx-[50%] my-52"></span>
+
     </main>
+    <!-- Main Section End  -->
+
 
     <!-- modal for descriptions -->
     <div>
@@ -146,18 +164,15 @@
     <!-- modal for Adopt -->
     <div>
         <!-- Open the modal using ID.showModal() method -->
-        <button id="adoptBtn" class="btn" onclick="adopt.showModal()">open modal</button>
         <dialog id="adopt" class="modal modal-bottom sm:modal-middle">
             <div class="modal-box text-center">
                 <i class="fa-solid fa-handshake text-5xl" style="color: #FFD43B;"></i>
                 <h3 class="text-5xl font-bold">Congrates</h3>
                 <p class="text-2xl py-4">Adoption Process is Start For Your Pet</p>
-                <div class="modal-action">
-                    <form method="dialog">
-                        <!-- if there is a button in form, it will close the modal -->
-                        <button class="btn">Close</button>
-                    </form>
-                </div>
+                <!-- <span class="countdown font-mono text-6xl">
+                    <span id="" style="--value:3;"></span>
+                </span> -->
+                <h1 id="timer" class=" font-mono text-6xl"></h1>
             </div>
         </dialog>
     </div>
